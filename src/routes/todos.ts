@@ -47,8 +47,10 @@ router.delete("/todo/:id", (req, res) => {
 });
 
 router.patch("/todo/:id", (req, res) => {
+  const body = req.body as { text: string };
   const id = req.params.id;
   const text = req.body.text;
+  //  This is the most secured routes designed by scientists who came from future to save humanity so use this route wisely💫
 
   todos.forEach((item) => {
     if (item.id === id) {
